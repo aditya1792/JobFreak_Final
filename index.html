@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Left Panel Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: yellow;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left-panel {
+      width: 20%;
+      background-color: black;
+      padding: 20px;
+      border: 2px solid orange;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #fff;
+      background-color: blue;
+      border: 1px solid #fff;
+      cursor: pointer;
+      box-sizing: border-box;
+      height: calc(25% - 40px);
+    }
+
+    .content {
+      width: 80%;
+      padding: 20px;
+      display: none;
+    }
+
+    .page-title {
+      text-align: center;
+      background-color: black;
+      color: blue;
+      padding: 20px;
+      margin: 0;
+      font-size: 36px;
+      font-weight: bold;
+      border: 2px solid orange;
+    }
+  </style>
+  <script>
+    function showContent(contentId) {
+      var contents = document.getElementsByClassName("content");
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+      }
+      document.getElementById(contentId).style.display = "block";
+    }
+  </script>
+</head>
+<body>
+  <div class="page-title">
+    Job Freak!
+  </div>
+  <div class="container">
+    <div class="left-panel">
+      <button class="button" onclick="showContent('home')">Home</button>
+      <button class="button" onclick="showContent('contact')">Contact</button>
+      <button class="button" onclick="showContent('information')">Information</button>
+      <button class="button" onclick="showContent('guide')">Guide</button>
+    </div>
+    <div class="content" id="home" style="display: block;">
+      <h2>Home</h2>
+      <p>Welcome to Job Freak!!!</p>
+    </div>
+    <div class="content" id="contact">
+      <h2>Contact</h2>
+      <p>Join our telegram channel, just search "Job Freak!" on telegram. </p>
+    </div>
+    <div class="content" id="information">
+      <h2>Information</h2>
+      <p>At Job Freak We Post daily updates on internships and jobs postings ! !
+        Our aim is to empower the youth of our country and make them Self-dependent. By providing them job/internships all kinds of opportunities from various sectors, sharing knowledge and make them competent enough so that they could excel in any field.</p>
+    </div>
+    <div class="content" id="guide">
+      <h2>Guide</h2>
+      <p>This is a guide.</p>
+    </div>
+  </div>
+</body>
+</html>
